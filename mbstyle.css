@@ -1,0 +1,280 @@
+:root {
+    --font-small: 12px;
+    --font-medium: 14px;  /* default */
+    --font-large: 19px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Header height */
+    padding-bottom: 50px; /* Footer height */
+    font-size: var(--font-medium); /* Base font size for rem calculations */
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1em; /* Relative to body font size */
+    flex-grow: 1;
+    text-align: center;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    font-size: 1.4em; /* Relative to body font size */
+    padding-left: 15px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-area {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    min-height: 44px;
+}
+
+.profile-area span {
+    margin-right: 8px;
+}
+
+.profile-area i {
+    font-size: 1.7em; /* Relative to body font size */
+}
+
+.profile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: #222;
+    z-index: 1002;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
+    border: 2px solid #444;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.profile-menu a {
+    padding: 8px 15px; /* Adjusted padding */
+    text-decoration: none;
+    font-size: 1rem; /* Relative to root font size */
+    color: #FFF; /* Pure white */
+    display: block;
+    transition: 0.3s;
+    min-height: 38px; /* Slightly reduced min-height */
+    display: flex;
+    align-items: center;
+}
+
+.profile-menu a:hover {
+    background-color: #444; /* Darker grey background on hover */
+    color: #FFF; /* Keep text white on hover */
+}
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #222222;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 5px 0px 15px rgba(0,0,0,0.5);
+    border-right: 2px solid #444;
+}
+
+.side-menu a {
+    padding: 8px 15px; /* Adjusted padding */
+    text-decoration: none;
+    font-size: 1rem; /* Relative to root font size */
+    color: #FFF; /* Pure white */
+    display: block;
+    transition: 0.3s;
+    min-height: 38px; /* Slightly reduced min-height */
+    display: flex;
+    align-items: center;
+}
+
+.side-menu a:hover {
+    background-color: #444; /* Darker grey background on hover */
+    color: #FFF; /* Keep text white on hover */
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2rem; /* Relative to root font size */
+    color: white;
+    background-color: #8B0000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    line-height: 1;
+}
+
+.side-menu .close-btn::before {
+    content: 'CLOSE: ';
+    font-size: 0.8em; /* Relative to .close-btn font size */
+    margin-right: 5px;
+}
+
+.side-menu .close-btn::after {
+    content: 'X';
+    font-size: 1.2em; /* Relative to .close-btn font size */
+    margin-left: 0;
+}
+
+.side-menu .menu-header {
+    padding: 10px 15px;
+    font-size: 0.7rem; /* Further reduced font size */
+    color: #ccc; /* Light grey */
+    font-style: normal; /* Not italics */
+    padding-left: 15px; /* Slight left padding */
+}
+
+main.content { /* Target main element specifically */
+    text-align:center; /* eddie saw that looks better on desktop system viewing the mobi template */
+    padding: 8px; 
+}
+
+.footer {
+    background-color: #333; /* Grey bar */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+}
+
+.footer a {
+    color: white; /* Pure white */
+    text-decoration: none;
+    padding: 0 10px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.footer a:last-child {
+    padding-right: 20px;
+}
+
+.action-menu {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    z-index: 1002;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+    border-top: 2px solid #444;
+}
+
+.action-menu a {
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: 1rem; /* Relative to root font size */
+    color: #FFF; /* Pure white */
+    display: block;
+    text-align: center;
+    transition: 0.3s;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-menu a:hover {
+    background-color: #444; /* Darker grey background on hover */
+    color: #FFF; /* Keep text white on hover */
+}
+
+.pressed {
+    transform: scale(0.98);
+    opacity: 0.8;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+/* Font size selector links */
+.font-size-link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.font-size-link:hover {
+    background-color: #444;
+    color: #FFF;
+}
+
+.font-size-link.small { font-size: var(--font-small); }
+.font-size-link.medium { font-size: var(--font-medium); }
+.font-size-link.large { font-size: var(--font-large); }
+.fa, .fas { padding-right:8px; }
+.settingsmain { background-color: #111; color: #f5f5f5; font-family: sans-serif; padding: 1rem; }
+.settingscontainer { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 10px; max-width: 600px; margin: 1rem auto; }
+.settingsheadline { text-align: center; font-weight: bold; font-size: 1.5rem; }
+.formrow { margin-bottom: 1rem; display: flex; flex-direction: column; }
+.formrow label { margin-bottom: 0.5rem; font-weight: bold; }
+.formrow input, .formrow select, .formrow textarea { padding: 0.5rem; background: #222; color: #eee; border: 1px solid #444; border-radius: 4px; width: 100%; box-sizing: border-box; }
+.submitrow { display: flex; gap: 1rem; align-items: center; margin-top: 1rem; }
+.submit_settings { background: #33cc66; color: black; border: none; padding: 0.7rem 1.2rem; cursor: pointer; font-weight: bold; border-radius: 4px; }
+.submit_settings:hover { background: #20b552; }
+.settingsinfo { margin-top: 1.2rem; font-size: 0.9rem; color: #aaa; text-align: center; }
+
+
+
+/* Responsive styles */
+@media screen and (max-width: 1280px) {
+    .header h1 {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 356px) {
+    .header h1 {
+        font-size: 0.9em;
+    }
+}

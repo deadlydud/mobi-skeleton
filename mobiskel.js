@@ -22,24 +22,18 @@ function close_all_menus() {
     $('#action-menu').slideUp(200);
 } // end func close_all_menus
 function update_fontsize_class() {
-    var fontsize = read_cookie("fontsize");
-    var mbhtml = $("html");
-    mbhtml.removeClass("fontsize_small fontsize_medium fontsize_large");
-    if (fontsize === "large") { mbhtml.addClass("fontsize_large"); } 
-    else if (fontsize === "small") { mbhtml.addClass("fontsize_small"); } 
-    else { mbhtml.addClass("fontsize_medium"); } // end else
-} // end func update_fontsize_class
-function reposition_footer() {
-    var content_height_int = $('main#content').outerHeight(true);
-    var window_height_int = $(window).height();
-    var header_height_int = $('header.header').outerHeight(true);
-    var footer_height_int = $('footer.footer').outerHeight(true);
-    if ((content_height_int + header_height_int + footer_height_int) < window_height_int) {
-        $('footer.footer').css({ 'position':'fixed', 'bottom':'0', 'width':'100%' });
+    var size_str = read_cookie('fontsize'); // 'small' | 'medium' | 'large'
+    var html_jq  = $('html');
+    html_jq.removeClass('fontsize_small fontsize_medium fontsize_large');
+
+    if (size_str === 'large') {
+        html_jq.addClass('fontsize_large');
+    } else if (size_str === 'small') {
+        html_jq.addClass('fontsize_small');
     } else {
-        $('footer.footer').css({ 'position':'relative', 'bottom':'auto', 'width':'100%' });
-    } // end else
-    } // end func reposition_footer
+        html_jq.addClass('fontsize_medium');
+    }
+} // end func update_fontsize_class
 $(document).ready(function() {
     apply_font_size_from_cookie();
     $('#hamburger-menu').on('click keypress', function(event) {
@@ -110,15 +104,9 @@ $(document).ready(function() {
     $('main#content').click(function() {
         close_all_menus();
     });
-    reposition_footer();
-    $(window).resize(reposition_footer);
-    document.body.addEventListener('htmx:afterSettle', function(evt) {
-        reposition_footer();
-    });
-
+    $(window).resize(update_fontsize_class);
 });
 $(window).on("load", function() {
-    reposition_footer();
     update_fontsize_class();
 });
 ;

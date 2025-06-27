@@ -12,10 +12,19 @@
 
   Created: 2025-06-27 by Sir Edwin the Great & Aither
 */
+/* --- new tiny helpers --------------------------------------- */
+function read_cookie(key_str) {          // wrapper around js-cookie
+    return Cookies.get(key_str);
+}
 function apply_font_size_from_cookie() {
     var font_size_str = Cookies.get('fontsize');
     if (font_size_str) { $('html').css('font-size', 'var(--font-' + font_size_str + ')'); }
 } // end func apply_font_size_from_cookie
+function set_font_size(size_str) {       // called from the [Small] links
+    Cookies.set('fontsize', size_str, { expires: 30, path: '/' });
+    /* reload the page so PHP can read the cookie & highlight correct link */
+    window.location.reload();
+}
 function close_all_menus() {
     $('#side-menu').css('width', '0');
     $('#profile-menu').slideUp(200);

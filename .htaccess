@@ -1,0 +1,107 @@
+# ----------------------------------------------------------------------
+# Security and performance hardening
+# Requires: mod_headers, mod_rewrite, mod_expires
+# ----------------------------------------------------------------------
+
+# --- Clickjacking protection
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# --- Basic CORS (adjust origin as needed)
+Header set Access-Control-Allow-Origin "https://pc.homelinux.com"
+Header set Access-Control-Allow-Credentials "true"
+
+# --- HTTP Strict Transport Security
+# see https://stackoverflow.com/questions/48101729/adding-http-strict-transport-security-to-htaccess
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+# --- XSS and MIME sniffing protection
+# XSS header: https://stackoverflow.com/questions/4635403/how-to-set-http-header-x-xss-protection
+Header set X-XSS-Protection "1; mode=block"
+# nosniff header: https://stackoverflow.com/questions/40891994/how-where-can-i-add-x-content-type-options-nosniff-in-all-responses-which-c
+Header set X-Content-Type-Options "nosniff"
+
+# --- Character set
+AddDefaultCharset UTF-8
+
+# ----------------------------------------------------------------------
+# Cache control
+# ----------------------------------------------------------------------
+ExpiresActive On
+ExpiresByType image/webp  "access plus 1 month"
+ExpiresByType image/png   "access plus 1 month"
+ExpiresByType image/gif   "access plus 1 month"
+ExpiresByType image/jpeg  "access plus 1 month"
+ExpiresByType text/css    "access plus 1 day"
+
+# Icons
+AddType image/vnd.microsoft.icon .ico
+ExpiresByType image/vnd.microsoft.icon "access plus 3 months"
+
+# HTML and plain text: short cache
+<FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "max-age=7200, must-revalidate"
+</FilesMatch>
+
+# Allow manifest files
+<FilesMatch "^manifest.*\.json$">
+    Require all granted
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Hide sensitive resources
+# ----------------------------------------------------------------------
+
+# Block any request that contains ".git"
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "\.git"
+    RewriteRule ^ - [F,L]
+</IfModule>
+
+# MOVE THESE 3 LINES BELOW INTO YOU APACHE VHOST SECTION AND UNCOMMENT IT
+#<DirectoryMatch ".*\.git.*">
+#    Require all denied
+#</DirectoryMatch>
+
+# Extra deny in case Rewrite is off .. but cant be in .htacess has to be in your apache vhost conf section.
+#<DirectoryMatch "^(.*/)?\.git/">
+#    Require all denied
+#</DirectoryMatch>
+
+# --- Block anything with ".git" in its name (file or directory) ------------
+# FilesMatch: matches just the filename
+<FilesMatch ".*\.git.*">
+    Require all denied
+</FilesMatch>
+
+# Common config, key, and env files
+<FilesMatch "(\.(env|ini|conf|config|cfg|cnf|key|pem)|^\.env)">
+    Require all denied
+</FilesMatch>
+
+# Log files
+<FilesMatch "(\.(log|txt)|^access_log$|^error_log$)">
+    Require all denied
+</FilesMatch>
+
+# SQL or backup dumps
+<FilesMatch "(\.(sql|sql\.gz|bak|dump|backup|db|sqlite)|^backup)">
+    Require all denied
+</FilesMatch>
+
+# Editor swap / temp files
+<FilesMatch "(\.(swp|swo|tmp|temp|bak|old))">
+    Require all denied
+</FilesMatch>
+
+# VCS metadata
+<FilesMatch "(\.(gitignore|gitattributes)|^\.gitignore|^\.gitattributes|^\.git|\.(hgignore|hgrc)|^\.hgignore|^\.hgrc|\.svn)">
+    Require all denied
+</FilesMatch>
+
+# Optional directory block (comment out if host disallows DirectoryMatch)
+#<DirectoryMatch "(logs|data|cfg|cache|sql|play|tmp|private|conf|uploads|backup|secret|system|bin|lib|vendor|resources)">
+#    Require all denied
+#</DirectoryMatch>
+
+

@@ -1,0 +1,40 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Log files
+*.log
+logs/
+storage/logs/
+
+# Env / creds
+.env
+.env.*
+
+# Cache / compiled assets
+/vendor/
+/node_modules/
+/dist/
+/build/
+/cache/
+/tmp/
+/*.zip
+/*.tar
+/*.tar.gz
+
+# IDE configs
+.vscode/
+.idea/
+phpstorm.meta.php
+
+# Images you do not want in repo
+#placeholder.jpg
+#placeholder.webp
+
+# PHPUnit / coverage
+coverage/
+

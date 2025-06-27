@@ -61,6 +61,8 @@ Typical first-run workflow:
 - A web server (e.g., Apache, Nginx)
 - Optional: local `.htaccess` support for pretty paths
 
+![Screenshot of Mobi Skeleton Homepage](img/screenshot.webp)
+
 ## File Structure
 .
 ├── index.php            # Entry point

@@ -1,0 +1,12 @@
+Nginx location block (goes in your server config)
+Insert the block inside the relevant server { ... } stanza, reload Nginx:
+sudo nginx -t && sudo systemctl reload nginx
+
+once you done that, delete this file.
+
+# Deny access to any .git directory or file
+location ~ /\.git {
+    deny  all;
+    return 404;
+}
+

@@ -1,7 +1,7 @@
-<?php // $Id$ 20250626 Thu 26Jun25 15h58m10s
+<?php // $Id$ 20250627 Fri 27Jun25 11h58m34s
 function home() {
     print "<div class=\"welcomehomeblock\" style=\"text-align:center;\">\n";
-    print "<h2 class=\"welcomeheadline\" aria-label=\"Welcome heading\">Welcome to the Mobi Skeleton</h2>\n";
+    print "<h2 class=\"welcomeheadline\" aria-label=\"Welcome heading\">Welcome to <span class='fordesktop'>the</span> Mobi Skeleton</h3>\n";
     print "<picture class=\"welcomehomepicture\" aria-hidden=\"true\">\n";
     print "  <source srcset=\"cellphone_and_hand_denoised.webp\" type=\"image/webp\">\n";
     print "  <img src=\"cellphone_and_hand_denoised.png\" alt=\"Placeholder image of a hand touching a smartphone screen\" style=\"max-width: 400px; width: 100%;\" class=\"welcomeimagecontent\">\n";

@@ -1,6 +1,6 @@
-<?php // $Id$ 20250626 Thu 26Jun25 17h08m30s
+<?php // $Id$ 20250627 Fri 27Jun25 10h53m20s
 function yourprofile() {
-    print "<main class=\"yourprofilemain\" aria-labelledby=\"profile_heading\">\n";
+    print "<section class=\"yourprofilemain\" aria-labelledby=\"profile_heading\">\n";
     print "  <div class=\"yourprofilecontainer\" style=\"max-width: 600px; margin: 0 auto; padding: 1rem;\">\n";
     print "    <h2 id=\"profile_heading\" class=\"yourprofileheadline\">Your Profile</h2>\n";
 
@@ -17,6 +17,6 @@ function yourprofile() {
     print "    <p class=\"yourprofileinfo\">This page displays your personal profile information. You can edit some details by clicking the 'Edit Profile' button.</p>\n";
 
     print "  </div><!-- end .yourprofilecontainer -->\n";
-    print "</main><!-- end .yourprofilemain -->\n";
+    print "</section><!-- end .yourprofilemain -->\n";
 } // end func yourprofile
 ?>

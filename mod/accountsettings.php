@@ -1,6 +1,6 @@
-<?php // $Id$ 20250626 Thu 26Jun25 16h06m01s
+<?php // $Id$ 20250627 Fri 27Jun25 10h52m36s
 function accountsettings() {
-    print "<main class=\"accountsettingsmain\" aria-labelledby=\"acctsettings_heading\">\n";
+    print "<section class=\"accountsettingsmain\" aria-labelledby=\"acctsettings_heading\">\n";
     print "  <div class=\"accountsettingscontainer\" style=\"max-width: 600px; margin: 0 auto; padding: 1rem;\">\n";
     print "    <h2 id=\"acctsettings_heading\" class=\"accountsettingsheadline\">Account Settings</h2>\n";
 
@@ -28,6 +28,6 @@ function accountsettings() {
     print "    <p class=\"accountsettingsinfo\">These settings are stored locally in your browser or with your account, depending on system configuration. You can customize display preferences, alerts, and general behavior here.</p>\n";
 
     print "  </div><!-- end .accountsettingscontainer -->\n";
-    print "</main><!-- end .accountsettingsmain -->\n";
+    print "</section><!-- end .accountsettingsmain -->\n";
 } // end func accountsettings
 ?>

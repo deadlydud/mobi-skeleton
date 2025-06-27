@@ -1,6 +1,6 @@
-<?php // $Id$ 20250626 Thu 26Jun25 17h08m30s
+<?php // $Id$ 20250627 Fri 27Jun25 10h53m16s
 function support() {
-    print "<main class=\"supportmain\" aria-labelledby=\"support_heading\">\n";
+    print "<section class=\"supportmain\" aria-labelledby=\"support_heading\">\n";
     print "  <div class=\"supportcontainer\" style=\"max-width: 600px; margin: 0 auto; padding: 1rem;\">\n";
     print "    <h2 id=\"support_heading\" class=\"supportheadline\">Support</h2>\n";
 
@@ -19,6 +19,6 @@ function support() {
     print "    <p class=\"supportinfo\">We are committed to providing you with the best possible support experience.</p>\n";
 
     print "  </div><!-- end .supportcontainer -->\n";
-    print "</main><!-- end .supportmain -->\n";
+    print "</section><!-- end .supportmain -->\n";
 } // end func support
 ?>

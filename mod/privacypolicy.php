@@ -1,6 +1,6 @@
-<?php // $Id$ 20250626 Thu 26Jun25 17h08m30s
+<?php // $Id$ 20250627 Fri 27Jun25 10h53m06s
 function privacypolicy() {
-    print "<main class=\"privacypolicymain\" aria-labelledby=\"privacy_heading\">\n";
+    print "<section class=\"privacypolicymain\" aria-labelledby=\"privacy_heading\">\n";
     print "  <div class=\"pp-container\" style=\"max-width: 600px; margin: 0 auto; padding: 1rem;\">\n";
     print "    <h2 id=\"privacy_heading\" class=\"pp-headline\">Privacy Policy</h2>\n";
 
@@ -42,6 +42,6 @@ function privacypolicy() {
     print "    <p class=\"pp-info\">This Privacy Policy was last updated on June 26, 2025.</p>\n";
 
     print "  </div><!-- end .pp-container -->\n";
-    print "</main><!-- end .privacypolicymain -->\n";
+    print "</section><!-- end .privacypolicymain -->\n";
 } // end func privacypolicy
 ?>

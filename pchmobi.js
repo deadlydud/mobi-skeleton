@@ -1,132 +1,108 @@
+/*
+  pchmobi.js - UI Interaction Handler for Mobi Skeleton Project
+  --------------------------------------------------------------
+  Notes for future maintainers:
+  - We deliberately use jQuery and ES5-style (older JavaScript syntax) for maximum compatibility.
+  - This script is meant to run reliably on old Android stock browsers and devices with limited JS support.
+  - Avoid using ES6+ syntax (like arrow functions, const/let, template literals, etc).
+  - All event handlers should support both 'click' and 'keypress' for accessibility.
+  - Use snake_case_var_naming consistently.
+  - No blank lines between function blocks for flatter visual layout (preferred by Sir Edwin).
+  - All font size behavior is controlled via CSS `:root` vars and toggled by setting cookies.
 
-$(document).ready(function(){
-    // Function to apply font size from cookie
-    function applyFontSizeFromCookie() {
-        var fontsize = Cookies.get('fontsize');
-        if (fontsize) {
-            $('html').css('font-size', 'var(--font-' + fontsize + ')');
-        }
-    }
-
-    // Apply font size on load
-    applyFontSizeFromCookie();
-
-    // --- Side Menu ---
-    $('#hamburger-menu').on('click keypress', function(event){
-        if (event.type === 'click' || event.keyCode === 13) {
+  Created: 2025-06-27 by Sir Edwin the Great & Aither
+*/
+function apply_font_size_from_cookie() {
+    var font_size_str = Cookies.get('fontsize');
+    if (font_size_str) { $('html').css('font-size', 'var(--font-' + font_size_str + ')'); }
+} // end func apply_font_size_from_cookie
+function close_all_menus() {
+    $('#side-menu').css('width', '0');
+    $('#profile-menu').slideUp(200);
+    $('#action-menu').slideUp(200);
+} // end func close_all_menus
+function reposition_footer() {
+    var content_height_int = $('main#content').outerHeight(true);
+    var window_height_int = $(window).height();
+    var header_height_int = $('header.header').outerHeight(true);
+    var footer_height_int = $('footer.footer').outerHeight(true);
+    if ((content_height_int + header_height_int + footer_height_int) < window_height_int) {
+        $('footer.footer').css({ 'position':'fixed', 'bottom':'0', 'width':'100%' });
+    } else {
+        $('footer.footer').css({ 'position':'relative', 'bottom':'auto', 'width':'100%' });
+    } // end else
+    } // end func reposition_footer
+$(document).ready(function() {
+    apply_font_size_from_cookie();
+    $('#hamburger-menu').on('click keypress', function(event) {
+        if ((event.type === 'click') || (event.keyCode === 13)) {
             event.stopPropagation();
-            closeAllMenus();
+            close_all_menus();
             $('#side-menu').css('width', '250px');
         }
     });
-
-    $('#close-btn').on('click keypress', function(event){
-        if (event.type === 'click' || event.keyCode === 13) {
+    $('#close-btn').on('click keypress', function(event) {
+        if ((event.type === 'click') || (event.keyCode === 13)) {
             $('#side-menu').css('width', '0');
         }
     });
-
-    // Animate and close side menu links
     $('.side-menu a').on('click keypress', function(event) {
-        if (event.type === 'click' || event.keyCode === 13) {
-            var $this = $(this);
-            $this.addClass('pressed');
+        if ((event.type === 'click') || (event.keyCode === 13)) {
+            var an_elem_obj = $(this);
+            an_elem_obj.addClass('pressed');
             setTimeout(function() {
-                $this.removeClass('pressed');
-                closeAllMenus();
+                an_elem_obj.removeClass('pressed');
+                close_all_menus();
             }, 300);
         }
     });
-
-    // --- Profile Menu ---
-    $('#profile-area').on('click keypress', function(event){
-        if (event.type === 'click' || event.keyCode === 13) {
+    $('#profile-area').on('click keypress', function(event) {
+        if ((event.type === 'click') || (event.keyCode === 13)) {
             event.stopPropagation();
             if ($('#profile-menu').is(':visible')) {
-                closeAllMenus();
+                close_all_menus();
             } else {
-                closeAllMenus();
+                close_all_menus();
                 $('#profile-menu').slideDown(200);
             }
         }
     });
-
-    // Animate and close profile menu links
     $('.profile-menu a').on('click keypress', function(event) {
-        if (event.type === 'click' || event.keyCode === 13) {
-            var $this = $(this);
-            $this.addClass('pressed');
+        if ((event.type === 'click') || (event.keyCode === 13)) {
+            var an_elem_obj = $(this);
+            an_elem_obj.addClass('pressed');
             setTimeout(function() {
-                $this.removeClass('pressed');
-                closeAllMenus();
+                an_elem_obj.removeClass('pressed');
+                close_all_menus();
             }, 300);
         }
     });
-
-    // --- Action Menu ---
-    $('#action-link').on('click keypress', function(event){
-        if (event.type === 'click' || event.keyCode === 13) {
+    $('#action-link').on('click keypress', function(event) {
+        if ((event.type === 'click') || (event.keyCode === 13)) {
             event.preventDefault();
             event.stopPropagation();
             if ($('#action-menu').is(':visible')) {
-                closeAllMenus();
+                close_all_menus();
             } else {
-                closeAllMenus();
+                close_all_menus();
                 $('#action-menu').slideDown(200);
             }
         }
     });
-
-    // Animate and close action menu links
     $('.action-menu a').on('click keypress', function(event) {
-        if (event.type === 'click' || event.keyCode === 13) {
-            var $this = $(this);
-            $this.addClass('pressed');
+        if ((event.type === 'click') || (event.keyCode === 13)) {
+            var an_elem_obj = $(this);
+            an_elem_obj.addClass('pressed');
             setTimeout(function() {
-                $this.removeClass('pressed');
-                closeAllMenus();
+                an_elem_obj.removeClass('pressed');
+                close_all_menus();
             }, 300);
         }
     });
-
-    // --- General ---
-    // Close all menus when clicking on the content area
-    $('main#content').click(function(){
-        closeAllMenus();
+    $('main#content').click(function() {
+        close_all_menus();
     });
-
-    function closeAllMenus() {
-        $('#side-menu').css('width', '0');
-        $('#profile-menu').slideUp(200);
-        $('#action-menu').slideUp(200);
-    }
-
-    // Footer repositioning
-    function repositionFooter() {
-        var contentHeight = $('main#content').outerHeight(true);
-        var windowHeight = $(window).height();
-        var headerHeight = $('header.header').outerHeight(true);
-        var footerHeight = $('footer.footer').outerHeight(true);
-
-        if (contentHeight + headerHeight + footerHeight < windowHeight) {
-            $('footer.footer').css({
-                'position': 'fixed',
-                'bottom': '0',
-                'width': '100%'
-            });
-        } else {
-            $('footer.footer').css({
-                'position': 'relative',
-                'bottom': 'auto',
-                'width': '100%'
-            });
-        }
-    }
-
-    // Call on load and resize
-    repositionFooter();
-    $(window).resize(repositionFooter);
-
-    // Note: This script is written to be compatible with older Android devices (from 2015 onwards)
-    // by using jQuery 3.6.0, which has broad browser support.
+    reposition_footer();
+    $(window).resize(reposition_footer);
 });
+;

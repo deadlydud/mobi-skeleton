@@ -77,18 +77,18 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.example.com/index.php">
-    <meta property="og:title" content="PC HOMELINUX MOBI">
+    <meta property="og:title" content="Mobile Friendly site Starter pack">
     <meta property="og:description" content="Generic phone, tablet and PC web app template using PHP and HTMX by Eddie Dunckley">
     <meta property="og:image" content="https://www.example.com/placeholder.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.example.com/index.php">
-    <meta property="twitter:title" content="PC HOMELINUX MOBI">
+    <meta property="twitter:title" content="Mobile Friendly site Starter pack">
     <meta property="twitter:description" content="Generic phone, tablet and PC web app template using PHP and HTMX by Eddie Dunckley">
     <meta property="twitter:image" content="https://www.example.com/placeholder.jpg">
 
-    <title>PC HOMELINUX MOBI</title>
+    <title>Mobile Friendly Site Starter Pack</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="mbstyle.css">
     <!-- Standard favicon (ICO + PNG fallback) -->
@@ -105,7 +105,7 @@
         <div class="hamburger-menu" id="hamburger-menu" aria-label="Open menu" tabindex="0">
             &#9776; Menu
         </div>
-        <h1 class="site-title">PC HOMELINUX MOBI</h1>
+        <h1 class="site-title">MOBILE FRIENDLY</h1>
         <div class="profile-area" id="profile-area" aria-label="User profile" tabindex="0">
             <span>Profile</span>
             <i class="fas fa-user-circle"></i>
@@ -115,7 +115,7 @@
     <nav class="profile-menu" id="profile-menu" aria-label="User profile navigation">
         <a href="index.php?frm=yourprofile" hx-get="index.php?frm=yourprofile&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-yourprofile"><i class="fas fa-user"></i> My Profile</a>
         <a href="index.php?frm=editpicture" hx-get="index.php?frm=editpicture&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-editpicture"><i class="fas fa-camera"></i> Edit Picture</a>
-        <a href="index.php?frm=accountsettings" hx-get="index.php?frm=accountsettings&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-accountsettings"><i class="fas fa-cog"></i> Account Settings</a>
+        <a href="index.php?frm=accountsettings" hx-get="index.php?frm=accountsettings&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-accountsettings"><i class="fas fa-cog"></i> Account <span class="fordesktop">Settings</span></a>
         <a href="index.php?frm=help" hx-get="index.php?frm=help&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-help"><i class="fas fa-question-circle"></i> Help</a>
         <a href="index.php?frm=support" hx-get="index.php?frm=support&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-support"><i class="fas fa-life-ring"></i> Support</a>
         <a href="index.php?frm=logout" hx-get="index.php?frm=logout&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="profile-link" id="profile-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -130,8 +130,8 @@
         <a href="index.php?frm=aboutus" hx-get="index.php?frm=aboutus&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-aboutus"><i class="fas fa-info-circle"></i> ABOUT US</a>
         <a href="index.php?frm=contactus" hx-get="index.php?frm=contactus&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-contactus"><i class="fas fa-envelope"></i> CONTACT US</a>
         <a href="index.php?frm=help" hx-get="index.php?frm=help&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-help"><i class="fas fa-question-circle"></i> HELP</a>
-        <a href="index.php?frm=termsconditions" hx-get="index.php?frm=termsconditions&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-termsconditions"><i class="fas fa-file-contract"></i> TERMS & CONDITIONS</a>
-        <a href="index.php?frm=privacypolicy" hx-get="index.php?frm=privacypolicy&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-privacypolicy"><i class="fas fa-shield-alt"></i> PRIVACY POLICY</a>
+        <a href="index.php?frm=termsconditions" hx-get="index.php?frm=termsconditions&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-termsconditions"><i class="fas fa-file-contract"></i> TERMS <span class="fordesktop">CONDITIONS</span></a>
+        <a href="index.php?frm=privacypolicy" hx-get="index.php?frm=privacypolicy&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-privacypolicy"><i class="fas fa-shield-alt"></i> PRIVACY <span class="fordesktop">POLICY</span></a>
         <div class="menu-header">-- ACCOUNT --</div>
         <a href="index.php?frm=login" hx-get="index.php?frm=login&ishtmx=1" hx-target="#content" hx-swap="innerHTML" class="side-link" id="side-login"><i class="fas fa-sign-in-alt"></i> LOGIN / LOGOUT</a>
     </nav>

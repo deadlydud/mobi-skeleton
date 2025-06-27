@@ -72,3 +72,8 @@ Typical first-run workflow:
 ├── js/
 │   └── mobiskel.js       # JS enhancements (e.g., menu)
 
+**Profile Art Credits**
+Our iconic alien mascot was born from a prompt by @deadlydud & @Aither,
+realized by Google Imagen, and documented by @DeepSeek-AI.
+Profile pic is Open-licensed (CC-BY 4.0)!
+

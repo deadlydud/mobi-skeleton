@@ -1,4 +1,4 @@
-<?php // $Id$ 20250627 Fri 27Jun25 11h16m20s
+<?php // $Id$ 20250627 Fri 27Jun25 13h29m55s
 
 function help() {
 print <<<HTML
@@ -64,7 +64,8 @@ print <<<HTML
 
 <p>This site uses <code>mod/*.php</code> as drop-in content blocks. Clone, modify, or overwrite them as needed.</p>
 
-<p>No frameworks, no lock-in – just raw PHP, HTMX, jQuery, and clean mobile responsiveness. Voetstoots. Hack it. Love it.</p>
+<p>No frameworks, no lock-in – just raw PHP, HTMX, jQuery, and clean mobile responsiveness.</br>
+    Voetstoots. Hack it. Love it.</p>
 
 <p>Questions? Visit <a href="?mod=contactus">Contact Us</a> or browse other built-in modules like <code>aboutus</code>, <code>action1</code>, and <code>settings</code>.</p>
 

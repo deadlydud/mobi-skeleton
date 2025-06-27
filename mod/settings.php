@@ -1,4 +1,4 @@
-<?php // $Id$ 20250627 Fri 27Jun25 11h00m40s
+<?php // $Id$ 20250627 Fri 27Jun25 13h12m21s
 
 function settings() {
     echo <<<HTML

@@ -1,47 +1,90 @@
-<?php // $Id$ 20250627 Fri 27Jun25 10h53m06s
+<?php // $Id$ 20250627 Fri 27Jun25 13h40m46s
+
 function privacypolicy() {
-    print "<section class=\"privacypolicymain\" aria-labelledby=\"privacy_heading\">\n";
-    print "  <div class=\"pp-container\" style=\"max-width: 600px; margin: 0 auto; padding: 1rem;\">\n";
-    print "    <h2 id=\"privacy_heading\" class=\"pp-headline\">Privacy Policy</h2>\n";
+    echo <<<HTML
+<section class="privacypolicymain" aria-labelledby="privacy_heading">
+  <div class="pp-container" style="max-width: 600px; margin: 0 auto; padding: 1rem; background-color: #1a1a1a; border: 1px solid #333; border-radius: 8px;">
 
-    print "    <style>\n";
-    print "      .pp-container { background-color: #1a1a1a; border: 1px solid #333; border-radius: 8px; margin-top: 20px; }\n";
-    print "      .pp-headline { color: #007bff; text-align: center; margin-bottom: 1.5rem; }\n";
-    print "      .pp-section { margin-bottom: 1rem; }\n";
-    print "      .pp-subsection-heading { color: #eee; font-size: 1.1rem; margin-bottom: 0.5rem; }\n";
-    print "      .pp-paragraph { color: #bbb; line-height: 1.6; margin-bottom: 1rem; }\n";
-    print "      .pp-list { list-style-type: disc; margin-left: 20px; color: #bbb; }\n";
-    print "      .pp-list-item { margin-bottom: 0.5rem; }\n";
-    print "      .pp-info { font-size: 0.9rem; color: #888; text-align: center; margin-top: 20px; }\n";
-    print "    </style>\n";
+    <style>
+      .pp-headline {
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .pp-section {
+        margin-bottom: 1rem;
+      }
+      .pp-subsection-heading {
+        color: #eee;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .pp-paragraph {
+        color: #bbb;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+      .pp-list {
+        list-style-type: disc;
+        margin-left: 20px;
+        color: #bbb;
+      }
+      .pp-list-item {
+        margin-bottom: 0.5rem;
+      }
+      .pp-info {
+        font-size: 0.9rem;
+        color: #888;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
 
-    print "    <section class=\"pp-section\">\n";
-    print "      <h3 class=\"pp-subsection-heading\">1. Information We Collect</h3>\n";
-    print "      <p class=\"pp-paragraph\">We collect information you provide directly to us, such as when you create an account or contact us. This may include your name, email address, and any other information you choose to provide.</p>\n";
-    print "    </section>\n";
+    <h2 id="privacy_heading" class="pp-headline">Privacy Policy</h2>
 
-    print "    <section class=\"pp-section\">\n";
-    print "      <h3 class=\"pp-subsection-heading\">2. How We Use Your Information</h3>\n";
-    print "      <p class=\"pp-paragraph\">We use the information we collect to provide, maintain, and improve our services, such as to:</p>\n";
-    print "      <ul class=\"pp-list\">\n";
-    print "        <li class=\"pp-list-item\">Process transactions and send related information.</li>\n";
-    print "        <li class=\"pp-list-item\">Send you technical notices, updates, security alerts, and support messages.</li>\n";
-    print "        <li class=\"pp-list-item\">Respond to your comments, questions, and requests.</li>\n";
-    print "      </ul>\n";
-    print "    </section>\n";
+    <p class="pp-paragraph">
+      Your privacy is important to us.<br/>We promise not to watch as you change your clothes.<br />
+      Well, not intentionally. But you should probably<br/>
+      close your webcam just in case.<br />
+      Do it now. &#128540; o_O we wont watch :-)
+    </p>
 
-    print "    <section class=\"pp-section\">\n";
-    print "      <h3 class=\"pp-subsection-heading\">3. Sharing of Information</h3>\n";
-    print "      <p class=\"pp-paragraph\">We may share information about you as follows or as otherwise described in this Privacy Policy:</p>\n";
-    print "      <ul class=\"pp-list\">\n";
-    print "        <li class=\"pp-list-item\">With vendors, consultants, and other service providers who need access to such information to carry out work on our behalf.</li>\n";
-    print "        <li class=\"pp-list-item\">In response to a request for information if we believe disclosure is in accordance with, or required by, any applicable law, regulation, or legal process.</li>\n";
-    print "      </ul>\n";
-    print "    </section>\n";
+    <section class="pp-section">
+      <h3 class="pp-subsection-heading">1. Information We Collect</h3>
+      <p class="pp-paragraph">
+        We collect information you provide directly to us,<br/>
+        such as when you create an account or send us messages.
+        This might include your name, email address,<br/>
+        and any other tidbits you willingly throw our way.
+      </p>
+    </section>
 
-    print "    <p class=\"pp-info\">This Privacy Policy was last updated on June 26, 2025.</p>\n";
+    <section class="pp-section">
+      <h3 class="pp-subsection-heading">2. How We Use Your Information</h3>
+      <p class="pp-paragraph">
+        We may use your info to:
+      </p>
+      <ul class="pp-list">
+        <li class="pp-list-item">Send you support responses written by AIs, not interns.</li>
+        <li class="pp-list-item">Log your caffeine habits (for statistical purposes only).</li>
+        <li class="pp-list-item">Make our little tool look slightly more professional.</li>
+      </ul>
+    </section>
 
-    print "  </div><!-- end .pp-container -->\n";
-    print "</section><!-- end .privacypolicymain -->\n";
+    <section class="pp-section">
+      <h3 class="pp-subsection-heading">3. Sharing of Information</h3>
+      <p class="pp-paragraph">
+        We don't sell your data to aliens, marketing robots, or dark wizards.<br />
+        If we <em>do</em> share something, it's probably a bug report.
+      </p>
+    </section>
+
+    <p class="pp-info">
+      This Privacy Policy was last updated on June 26, 2025.<br />
+      It's entirely up to you to change this page to "suit" your "needs".
+    </p>
+  </div><!-- end .pp-container -->
+</section><!-- end .privacypolicymain -->
+HTML;
 } // end func privacypolicy
 ?>

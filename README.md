@@ -70,5 +70,5 @@ Typical first-run workflow:
 │   ├── settings.php
 │   └── ...
 ├── js/
-│   └── pchmobi.js       # JS enhancements (e.g., menu)
+│   └── mobiskel.js       # JS enhancements (e.g., menu)
 

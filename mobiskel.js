@@ -1,5 +1,5 @@
 /*
-  pchmobi.js - UI Interaction Handler for Mobi Skeleton Project
+  mobiskel.js - UI Interaction Handler for Mobi Skeleton Project
   --------------------------------------------------------------
   Notes for future maintainers:
   - We deliberately use jQuery and ES5-style (older JavaScript syntax) for maximum compatibility.

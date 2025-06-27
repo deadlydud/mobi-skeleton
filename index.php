@@ -154,7 +154,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <script src="pchmobi.js"></script>
+    <script src="mobiskel.js"></script>
 </body>
 </html>
 <?php

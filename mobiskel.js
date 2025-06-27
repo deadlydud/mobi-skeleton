@@ -21,6 +21,14 @@ function close_all_menus() {
     $('#profile-menu').slideUp(200);
     $('#action-menu').slideUp(200);
 } // end func close_all_menus
+function update_fontsize_class() {
+    var fontsize = read_cookie("fontsize");
+    var mbhtml = $("html");
+    mbhtml.removeClass("fontsize_small fontsize_medium fontsize_large");
+    if (fontsize === "large") { mbhtml.addClass("fontsize_large"); } 
+    else if (fontsize === "small") { mbhtml.addClass("fontsize_small"); } 
+    else { mbhtml.addClass("fontsize_medium"); } // end else
+} // end func update_fontsize_class
 function reposition_footer() {
     var content_height_int = $('main#content').outerHeight(true);
     var window_height_int = $(window).height();
@@ -104,5 +112,13 @@ $(document).ready(function() {
     });
     reposition_footer();
     $(window).resize(reposition_footer);
+    document.body.addEventListener('htmx:afterSettle', function(evt) {
+        reposition_footer();
+    });
+
+});
+$(window).on("load", function() {
+    reposition_footer();
+    update_fontsize_class();
 });
 ;

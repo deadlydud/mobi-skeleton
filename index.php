@@ -107,7 +107,7 @@
         </div>
         <h1 class="site-title">MOBILE FRIENDLY</h1>
         <div class="profile-area" id="profile-area" aria-label="User profile" tabindex="0">
-            <span>Profile</span>
+            <span class="profile_label_text">Profile</span>
             <i class="fas fa-user-circle"></i>
         </div>
     </header>

@@ -3,22 +3,20 @@
     --font-medium: 0.875rem; /* = 14px */
     --font-large: 1.1875rem; /* = 19px */
 }
+html, body { height:100%; }
 body {
     background-color:black; color:white; font-family:sans-serif; margin:0;
     padding-top:60px; /* Header height */
     padding-bottom:50px; /* Footer height */
     font-size: var(--font-medium); /* base size relative to :root */
-    line-height: 1.618; /* golden ratio factor &/
+    line-height: 1.618; /* golden ratio factor */
 }
-.profile-menu a {
-    font-size: 1rem;  /* Inherit and scale relative to html */
-}
-.side-menu a {
-    font-size: 1rem;
-}
-.header h1 {
-    font-size: 1em; /* Relative to body */
-}
+#mainwrapper { display: flex; flex-direction: column; min-height: 100vh; }
+#contentarea { flex: 1 0 auto; }
+#footer { flex-shrink: 0; }
+.profile-menu a { font-size: 1rem; }  /* Inherit and scale relative to html */
+.side-menu a { font-size: 1rem; }
+.header h1 { font-size: 1em; } /* Relative to body */
 .header { background-color:#333; color:white; padding:10px; text-align:center; position:fixed; top:0; width:100%; height:40px; z-index:1000; display:flex; align-items:center; justify-content:space-between; }
 .header h1 { margin:0; font-size:1em; flex-grow:1; text-align:center; } /* Relative to body font size */ 
 .hamburger-menu { cursor:pointer; font-size:1.4em; padding-left:15px; min-height:44px; display:flex; align-items:center; } /* Relative to body font size */ 
@@ -124,4 +122,4 @@ details[open] summary::before { transform:rotate(90deg); }
 @media screen and (max-width:1280px) { .header h1 { font-size:1em; } }
 @media (min-width:770px) { .fordesktop { display:inline; padding-left:4px; } }
 @media screen and (max-width:356px) { .header h1 { font-size:0.9em; } }
-
+@media screen and (max-width: 400px), (min-width: 400px) and .fontsize_large { .profile_label_text { display: none; } }

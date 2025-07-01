@@ -64,6 +64,7 @@ Typical first-run workflow:
 ![Screenshot of Mobi Skeleton Homepage](img/screenshot.webp)
 
 ## File Structure
+<pre>
 .
 ├── index.php            # Entry point
 ├── mbstyle.css          # Shared dark theme CSS
@@ -72,6 +73,7 @@ Typical first-run workflow:
 │   ├── settings.php
 │   └── ...
 ├── mobiskel.js          # JS enhancements (e.g., menu)
+</pre>
 
 **Profile Art Credits**
 Our iconic alien mascot was born from a prompt by @deadlydud & @Aither,

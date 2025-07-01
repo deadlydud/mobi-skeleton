@@ -38,3 +38,4 @@ phpstorm.meta.php
 # PHPUnit / coverage
 coverage/
 
+.phpunit.result.cache

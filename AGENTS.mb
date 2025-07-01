@@ -1,0 +1,8 @@
+## Agents
+
+### \xf0\x9f\xa7\xa0 Codex-Ae
+- **Role**: General assistant for coding, doc editing, testing, and refactoring.
+- **Trigger**: Via Codex UI or `.codex/tasks.json`
+- **Scope**: Full access to project files.
+- **Limitations**: No internet access unless configured via plugin.
+- **Token**: Injected via environment (GH_TOKEN, OPENAI_KEY)

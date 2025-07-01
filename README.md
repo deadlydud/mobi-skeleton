@@ -48,6 +48,9 @@ Typical first-run workflow:
 10. Feeling grateful? Fuel my trance lab by streaming a track or two:
     https://youtube.com/eddiedunckley
 
+Please support the Artist through BuyMusic South Africa:
+Link: www.buymusic.co.za  They depend on your purchases and music streaming.
+
 ## Included Modules
 
 - `home`, `aboutus`, `contactus`

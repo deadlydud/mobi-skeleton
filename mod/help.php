@@ -58,16 +58,16 @@ print <<<HTML
     <li>Step 5: Start editing the modules inside <code>mod/</code>.</li>
     <li>Step 6: Use <code>hx-get</code>, <code>hx-swap</code>, and HTMX for interactivity.</li>
     <li>Step 7: Style your pages in <code>mbstyle.css</code>.</li>
-    <li>Step 8: Expand as needed – add DB logic, auth, or new modules.</li>
+    <li>Step 8: Expand as needed - add DB logic, auth, or new modules.</li>
   </ul>
 </details>
 
 <p>This site uses <code>mod/*.php</code> as drop-in content blocks. Clone, modify, or overwrite them as needed.</p>
 
-<p>No frameworks, no lock-in – just raw PHP, HTMX, jQuery, and clean mobile responsiveness.</br>
+<p>No frameworks, no lock-in - just raw PHP, HTMX, jQuery, and clean mobile responsiveness.<br>
     Voetstoots. Hack it. Love it.</p>
 
-<p>Questions? Visit <a href="?mod=contactus">Contact Us</a> or browse other built-in modules like <code>aboutus</code>, <code>action1</code>, and <code>settings</code>.</p>
+<p>Questions? Visit <a href="?frm=contactus">Contact Us</a> or browse other built-in modules like <code>aboutus</code>, <code>action1</code>, and <code>settings</code>.</p>
 
 </section><!-- end .helpblock -->
 HTML;

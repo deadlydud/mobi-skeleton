@@ -71,8 +71,7 @@ Typical first-run workflow:
 │   ├── home.php
 │   ├── settings.php
 │   └── ...
-├── js/
-│   └── mobiskel.js       # JS enhancements (e.g., menu)
+├── mobiskel.js          # JS enhancements (e.g., menu)
 
 **Profile Art Credits**
 Our iconic alien mascot was born from a prompt by @deadlydud & @Aither,

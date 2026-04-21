@@ -66,6 +66,15 @@ li { text-align:left; padding-left:0.75rem; margin-left:0; list-style-position:o
 }
 /* Target main element specifically */ 
 main.content { text-align:center; padding:8px; } /* eddie saw that looks better on desktop system viewing the mobi template */ 
+.mobiskel-pane-note { max-width:760px; margin:0.5rem auto 0.75rem auto; padding:0.75rem; color:#dbeafe; background:#101820; border:1px solid #345; border-radius:6px; text-align:left; }
+.mobiskel-pane-switcher { max-width:760px; margin:0 auto 0.75rem auto; display:flex; gap:0.5rem; align-items:center; justify-content:center; flex-wrap:wrap; }
+.mobiskel-pane-button, .mobiskel-repaint-link { min-height:38px; display:inline-flex; align-items:center; justify-content:center; padding:0.45rem 0.7rem; border:1px solid #555; border-radius:5px; background:#222; color:#fff; text-decoration:none; box-sizing:border-box; }
+.mobiskel-pane-button:hover, .mobiskel-pane-button:focus, .mobiskel-repaint-link:hover, .mobiskel-repaint-link:focus { background:#344; color:#fff; padding:0.45rem 0.7rem; border-radius:5px; }
+.mobiskel-pane-button-active { background:#0b6fa4; border-color:#33bbff; color:#fff; }
+.mobiskel-pane { display:none; max-width:920px; margin:0 auto 1rem auto; border:1px solid #444; border-radius:6px; background:#101010; text-align:left; overflow:hidden; }
+.mobiskel-pane-active { display:block; }
+.mobiskel-panel-label { padding:0.45rem 0.75rem; background:#263238; color:#ffffff; font-weight:bold; border-bottom:1px solid #444; letter-spacing:0; }
+.mobiskel-panel-body { padding:0.75rem; text-align:center; }
 .footer { background-color:#333; color:white; padding:10px; text-align:center; position:fixed; bottom:0; width:100%; height:30px; z-index:1000; display:flex; justify-content:space-between; align-items:center; } /* Grey bar  Vertically align items */ 
 .footer a { color:white; text-decoration:none; padding:0 10px; min-height:44px; display:flex; align-items:center; } /* Pure white text */ 
 .footer a:last-child { padding-right:20px; }

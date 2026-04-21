@@ -7,6 +7,21 @@
 3. Open `/index.php` in a browser.
 4. Replace placeholder modules, images, policy text, and contact details.
 
+## App Config
+
+Basic public app settings live in `cfg/app.php`:
+
+```php
+$app_config_arr = array(
+    'app_name_str' => 'Mobi Skeleton',
+    'default_frm_str' => 'home',
+    'default_pane_str' => 'panel1'
+);
+```
+
+Do not put secrets in this file. Use deployment configuration or `.env` for
+local-only private values.
+
 ## Apache
 
 The repository includes `.htaccess` hardening rules. They require common Apache
@@ -36,7 +51,17 @@ function example() {
 Then link to it with:
 
 ```html
-<a href="index.php?frm=example" hx-get="index.php?frm=example&ishtmx=1" hx-target="#content" hx-swap="innerHTML">Example</a>
+<a href="index.php?frm=example&pane=panel1">Example</a>
+```
+
+For the default two-panel shell, target a panel body instead:
+
+```html
+<a href="index.php?frm=example&pane=panel1"
+   hx-get="index.php?frm=example&pane=panel1&ishtmx=1"
+   hx-target="#mobiskel-panel-1-body"
+   hx-swap="innerHTML"
+   onclick="mobiskel_show_pane('panel1');">Example</a>
 ```
 
 ## Checks

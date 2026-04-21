@@ -9,6 +9,7 @@ phone-first sites and simple application prototypes.
 - PHP entry point with modular pages in `mod/*.php`
 - HTMX navigation with normal links as a fallback
 - jQuery-based menu interactions for older mobile browser support
+- Two always-present panels for dynamic mode switching
 - Responsive dark theme for phones, tablets, and desktops
 - Placeholder account, settings, support, policy, and action pages
 - No database layer and no framework assumptions
@@ -28,6 +29,17 @@ phone-first sites and simple application prototypes.
 5. Replace the placeholder artwork, text, terms, privacy policy, and forms for your project.
 
 See [docs/SETUP.md](docs/SETUP.md) for a slightly more detailed setup checklist.
+
+## Panels
+
+The default layout includes two persistent panels:
+
+- `Panel 1` for the primary app surface
+- `Panel 2` for secondary/detail content
+
+The panels switch instantly with `mobiskel_show_pane('panel1')` and
+`mobiskel_show_pane('panel2')`. Each panel can also be repainted with HTMX when
+fresh server-rendered content is needed. See [docs/PANES.md](docs/PANES.md).
 
 ## Module Pattern
 
@@ -69,8 +81,10 @@ database, authentication, API, or template layer.
 |-- index.php
 |-- mbstyle.css
 |-- mobiskel.js
+|-- cfg/
 |-- mod/
 |   |-- home.php
+|   |-- panel2.php
 |   |-- settings.php
 |   `-- ...
 |-- tests/

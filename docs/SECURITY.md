@@ -16,6 +16,7 @@ Do not commit:
 - Apache can use the included `.htaccess` rules.
 - Nginx needs equivalent `server` or `location` rules.
 - Deny direct web access to VCS metadata, logs, config files, SQL dumps, backups, and temporary files.
+- The tracked `cfg/.htaccess` denies direct Apache access to `cfg/`.
 - Use HTTPS in production.
 
 ## Application

@@ -41,8 +41,18 @@ function update_fontsize_class() {
         html_jq.addClass('fontsize_medium');
     }
 } // end func update_fontsize_class
+function mobiskel_show_pane(target_pane_str) {
+    var safe_target_pane_str = ((target_pane_str === 'panel2') ? 'panel2' : 'panel1');
+    var pane_selector_str = ((safe_target_pane_str === 'panel2') ? '#mobiskel-panel-2' : '#mobiskel-panel-1');
+    $('.mobiskel-pane').removeClass('mobiskel-pane-active').hide();
+    $(pane_selector_str).show().addClass('mobiskel-pane-active');
+    $('.mobiskel-pane-button').removeClass('mobiskel-pane-button-active').attr('aria-selected', 'false');
+    $('.mobiskel-pane-button[data-mobiskel-pane-target="' + safe_target_pane_str + '"]').addClass('mobiskel-pane-button-active').attr('aria-selected', 'true');
+    $('body').attr('data-active-pane', safe_target_pane_str);
+} // end func mobiskel_show_pane
 $(document).ready(function() {
     apply_font_size_from_cookie();
+    mobiskel_show_pane($('body').attr('data-active-pane'));
     $('#hamburger-menu').on('click keypress', function(event) {
         if ((event.type === 'click') || (event.keyCode === 13)) {
             event.stopPropagation();
@@ -111,6 +121,20 @@ $(document).ready(function() {
     $('main#content').click(function() {
         close_all_menus();
     });
+    $('.mobiskel-pane-button').on('click keypress', function(event) {
+        if ((event.type === 'click') || (event.keyCode === 13)) {
+            mobiskel_show_pane($(this).attr('data-mobiskel-pane-target'));
+        }
+    });
+    if (document.body) {
+        document.body.addEventListener('htmx:afterSwap', function(event) {
+            if (event.detail && event.detail.target && (event.detail.target.id === 'mobiskel-panel-1-body')) {
+                mobiskel_show_pane('panel1');
+            } else if (event.detail && event.detail.target && (event.detail.target.id === 'mobiskel-panel-2-body')) {
+                mobiskel_show_pane('panel2');
+            }
+        });
+    }
     $(window).resize(update_fontsize_class);
 });
 $(window).on("load", function() {

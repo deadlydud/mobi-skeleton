@@ -1,85 +1,108 @@
 # mobi-skeleton
 
-A mobile-friendly, HTMX-powered PHP web app skeleton – modular,
-dark-themed, and easy to extend for phones, tablets, and desktops.
-
-Created by Eddie Dunckley (Sir Edwin the Great) as a generic but
-flexible starting point for rapid web app prototyping across devices.
+A mobile-friendly PHP web app skeleton using HTMX, jQuery, plain CSS, and
+small file-based modules. It is intended as a reusable starting point for
+phone-first sites and simple application prototypes.
 
 ## Features
 
-- PHP backend with modular file-based structure (`mod/*.php`)
-- Dark-themed UI with HTMX-driven interactivity
-- Responsive layout for mobile, tablet, and PC
-- No frameworks – just vanilla PHP, JS (jQuery), and CSS
-- Instant loading via `hx-get`, `hx-swap`, and inline content targets
-- Extensible: plug in your own forms, logic, or settings panels
-
-## Reasoning / Explanation
-
-Why another skeleton? Because when a client says,
-"Quick, we need a mobile-first site!" the real battle is always the same:
-menus that break at odd widths, footers that crawl over content, and CSS
-breakpoints that explode on older phones. This repo is my bare-bones launch
-pad – a tiny template you can clone, prove it works, then immediately hack
-to pieces for your own needs.
-
-Typical first-run workflow:
-
-1. Assume you already have a web server (Apache, Nginx, etc.) with PHP
-   enabled.
-2. Confirm PHP is installed (fcgi or cli) and that ".php" files are routed
-   through the PHP handler.
-3. Drop the contents of mobi-skeleton into a web-visible directory, e.g.
-   /var/www/html/mb/ (rename as you like).
-4. Browse to https://your-site.org/mb/index.php (or just /mb/ if your
-   server auto-indexes index.php) and confirm it renders.
-5. Start editing – rip out what you dislike, bolt in what you need.
-   Nothing here is sacred.
-6. Lean on HTMX, jQuery, Tailwind, Bootstrap, or any template engine you
-   fancy; this code is a starting block, not a framework.
-7. Note: the code is bare-bones (Afrikaans "voetstoots") – sold as-is,
-   no database layer, no auth, no templates beyond simple includes.
-8. Add your own database (PostgreSQL, MariaDB, MySQL, SQLite, etc.),
-   pick a template engine (Plates, Twig, Smarty, Mustache, Latte, Blade),
-   and extend the JS as needed (jQuery keeps old Android 5+ phones alive
-   in South Africa).
-9. Ship it, iterate, and have fun.
-10. Feeling grateful? Fuel my trance lab by streaming a track or two:
-    https://youtube.com/eddiedunckley
-
-Please support the Artist through BuyMusic South Africa:
-Link: www.buymusic.co.za  They depend on your purchases and music streaming.
-
-## Included Modules
-
-- `home`, `aboutus`, `contactus`
-- `action1`, `action2` – generic placeholders with styled content
-- `settings`, `accountsettings` – forms and sliders
-- `support`, `help`, `termsconditions`, `privacypolicy`
+- PHP entry point with modular pages in `mod/*.php`
+- HTMX navigation with normal links as a fallback
+- jQuery-based menu interactions for older mobile browser support
+- Responsive dark theme for phones, tablets, and desktops
+- Placeholder account, settings, support, policy, and action pages
+- No database layer and no framework assumptions
 
 ## Requirements
 
 - PHP 7.x or newer
-- A web server (e.g., Apache, Nginx)
-- Optional: local `.htaccess` support for pretty paths
+- Apache, Nginx, or another web server that can serve PHP
+- Optional Apache `.htaccess` support for the included hardening rules
 
-![Screenshot of Mobi Skeleton Homepage](img/screenshot.webp)
+## Quick Start
+
+1. Clone or copy this repository into a web-visible directory.
+2. Confirm PHP requests are handled by your web server.
+3. Open `/index.php` in a browser.
+4. Edit `index.php`, `mbstyle.css`, `mobiskel.js`, and the modules under `mod/`.
+5. Replace the placeholder artwork, text, terms, privacy policy, and forms for your project.
+
+See [docs/SETUP.md](docs/SETUP.md) for a slightly more detailed setup checklist.
+
+## Module Pattern
+
+Each page is selected with the `frm` query parameter. For example:
+
+```text
+index.php?frm=contactus
+```
+
+That loads:
+
+```text
+mod/contactus.php
+```
+
+The module should define a matching function:
+
+```php
+function contactus() {
+    print "<h2>Contact Us</h2>";
+} // end func contactus
+```
+
+Keep new modules generic until a downstream project is ready to add its own
+database, authentication, API, or template layer.
+
+## Included Modules
+
+- `home`, `aboutus`, `contactus`
+- `action1`, `action2`
+- `settings`, `accountsettings`
+- `login`, `logout`, `yourprofile`, `editpicture`
+- `support`, `help`, `termsconditions`, `privacypolicy`, `license`
 
 ## File Structure
-<pre>
+
+```text
 .
-├── index.php            # Entry point
-├── mbstyle.css          # Shared dark theme CSS
-├── mod/                 # All content modules
-│   ├── home.php
-│   ├── settings.php
-│   └── ...
-├── mobiskel.js          # JS enhancements (e.g., menu)
-</pre>
+|-- index.php
+|-- mbstyle.css
+|-- mobiskel.js
+|-- mod/
+|   |-- home.php
+|   |-- settings.php
+|   `-- ...
+|-- tests/
+|-- docs/
+`-- img/
+```
 
-**Profile Art Credits**
-Our iconic alien mascot was born from a prompt by @deadlydud & @Aither,
-realized by Google Imagen, and documented by @DeepSeek-AI.
-Profile pic is Open-licensed (CC-BY 4.0)!
+## Privacy And Secrets
 
+This repository should stay safe to reuse publicly.
+
+Do not commit:
+
+- `.env` files
+- real API keys, OAuth secrets, or access tokens
+- private hostnames, emails, names, addresses, or client data
+- production logs, uploads, media libraries, database dumps, or cache files
+- app-specific documentation copied from a private project
+
+Use `.env.example` for placeholder configuration names only. See
+[docs/SECURITY.md](docs/SECURITY.md) for the skeleton hardening checklist.
+
+## Development Checks
+
+Run PHP syntax checks before committing PHP changes:
+
+```sh
+php -l index.php
+for phpfile in mod/*.php tests/*.php; do php -l "$phpfile" || exit 1; done
+```
+
+If PHPUnit is installed for your environment, the included input-cleaning test
+can be used as a small smoke test.
+
+![Screenshot of Mobi Skeleton Homepage](img/screenshot.webp)

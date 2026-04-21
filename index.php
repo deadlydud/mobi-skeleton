@@ -71,21 +71,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Generic phone, tablet and PC web app template using PHP and HTMX by Eddie Dunckley">
-    <meta name="author" content="Eddie Dunckley">
+    <meta name="description" content="Generic phone, tablet and PC web app template using PHP and HTMX">
+    <meta name="author" content="Project Maintainers">
     <meta name="robots" content="index,follow">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.example.com/index.php">
     <meta property="og:title" content="Mobile Friendly site Starter pack">
-    <meta property="og:description" content="Generic phone, tablet and PC web app template using PHP and HTMX by Eddie Dunckley">
+    <meta property="og:description" content="Generic phone, tablet and PC web app template using PHP and HTMX">
     <meta property="og:image" content="https://www.example.com/placeholder.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.example.com/index.php">
     <meta property="twitter:title" content="Mobile Friendly site Starter pack">
-    <meta property="twitter:description" content="Generic phone, tablet and PC web app template using PHP and HTMX by Eddie Dunckley">
+    <meta property="twitter:description" content="Generic phone, tablet and PC web app template using PHP and HTMX">
     <meta property="twitter:image" content="https://www.example.com/placeholder.jpg">
 
     <title>Mobile Friendly Site Starter Pack</title>

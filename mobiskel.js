@@ -7,10 +7,8 @@
   - Avoid using ES6+ syntax (like arrow functions, const/let, template literals, etc).
   - All event handlers should support both 'click' and 'keypress' for accessibility.
   - Use snake_case_var_naming consistently.
-  - No blank lines between function blocks for flatter visual layout (preferred by Sir Edwin).
+  - Keep function blocks compact and easy to scan.
   - All font size behavior is controlled via CSS `:root` vars and toggled by setting cookies.
-
-  Created: 2025-06-27 by Sir Edwin the Great & Aither
 */
 /* --- new tiny helpers --------------------------------------- */
 function read_cookie(key_str) {          // wrapper around js-cookie

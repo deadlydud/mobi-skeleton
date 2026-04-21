@@ -5,6 +5,8 @@ Thumbs.db
 *.swo
 *.bak
 *.tmp
+ksnip_*.png
+project_dump*
 
 # Log files
 *.log
@@ -14,6 +16,7 @@ storage/logs/
 # Env / creds
 .env
 .env.*
+!.env.example
 
 # Cache / compiled assets
 /vendor/
@@ -22,6 +25,11 @@ storage/logs/
 /build/
 /cache/
 /tmp/
+/play/
+/data/
+/audio/
+/videos/
+/uploads/
 /*.zip
 /*.tar
 /*.tar.gz
@@ -30,6 +38,9 @@ storage/logs/
 .vscode/
 .idea/
 phpstorm.meta.php
+.codex
+.codex/
+.claude/
 
 # Images you do not want in repo
 #placeholder.jpg

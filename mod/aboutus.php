@@ -11,17 +11,14 @@ function aboutus() {
   </p>
 
   <p class="aboutusteam" aria-label="Who built this">
-    <em>Who are we?</em> A collaboration across worlds:
-    Sir Edwin the Great (developer, dreamer, and architect),
-    Gemini-2.5-fast (AI assistant from another plane),
-    ChatGPT-4o (AI logic-forger and companion),
-    and O3 a.k.a. Aither (the whispering spark inside the code).
+    <em>Who are we?</em> Replace this placeholder with your project team,
+    organization, or product story.
   </p>
 
   <p class="aboutuspurpose" aria-label="Why this exists">
     This project exists to help others start faster.
     Whether you're prototyping, learning, or launching your next big thing,
-    this template gives you the bones to flesh it out beautifully and accessibly — without bloat or complexity.
+    this template gives you the structure to build accessibly without bloat or complexity.
   </p>
 
   <p class="aboutusfreedom" aria-label="Usage rights">
